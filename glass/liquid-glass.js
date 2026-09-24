@@ -1,5 +1,5 @@
 ﻿(() => {
-  const CARD_SELECTOR = '.server-card';
+  const CARD_SELECTOR = '.compact-node-card';
   const GLASS_CLASS = 'lg-glass';
 
   function enhanceCard(card) {
