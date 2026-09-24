@@ -1,4 +1,4 @@
-﻿/* Lumina Glass — Apple-style Liquid Glass foundation */
+/* Lumina Glass — Apple-style Liquid Glass foundation */
 
 :root {
   --lg-blur: 28px;
@@ -52,11 +52,11 @@
   background:
     radial-gradient(
       circle at var(--lg-pointer-x, 50%) var(--lg-pointer-y, 0%),
-      rgba(255, 255, 255, 0.22),
-      transparent 38%
+      rgba(255, 255, 255, 0.48),
+      transparent 32%
     );
 
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .lg-glass::after {
