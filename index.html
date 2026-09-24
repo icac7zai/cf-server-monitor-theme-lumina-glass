@@ -102,7 +102,100 @@
     <link rel="stylesheet" crossorigin href="./assets/charts-CnsZ1jie.css">
     <link rel="stylesheet" crossorigin href="./assets/index-CVBii70Z.css">
     <meta name="theme-version" content="LuminaPlus v1.2.18" />
-    <link rel="stylesheet" href="./glass/liquid-glass.css" />
+    <style>
+/* Lumina Glass — Apple-style Liquid Glass foundation */
+
+:root {
+  --lg-blur: 28px;
+  --lg-saturation: 145%;
+  --lg-brightness: 108%;
+  --lg-alpha: 0.58;
+  --lg-border-alpha: 0.22;
+  --lg-highlight-alpha: 0.28;
+  --lg-shadow-alpha: 0.22;
+}
+
+.lg-glass {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04) 45%,
+      rgba(255, 255, 255, 0.08)
+    ),
+    rgba(255, 255, 255, var(--lg-alpha));
+
+  backdrop-filter:
+    blur(var(--lg-blur))
+    saturate(var(--lg-saturation))
+    brightness(var(--lg-brightness));
+
+  -webkit-backdrop-filter:
+    blur(var(--lg-blur))
+    saturate(var(--lg-saturation))
+    brightness(var(--lg-brightness));
+
+  border: 1px solid rgba(255, 255, 255, var(--lg-border-alpha));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, var(--lg-highlight-alpha)),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 12px 40px rgba(0, 0, 0, var(--lg-shadow-alpha));
+
+  overflow: hidden;
+}
+
+.lg-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at var(--lg-pointer-x, 50%) var(--lg-pointer-y, 0%),
+      rgba(255, 255, 255, 0.22),
+      transparent 38%
+    );
+
+  opacity: 0.8;
+}
+
+.lg-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.10) 48%,
+      transparent 65%
+    );
+
+  opacity: 0.45;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-glass::before,
+  .lg-glass::after {
+    transition: none !important;
+  }
+}
+
+[data-appearance="dark"] {
+  --lg-alpha: 0.42;
+  --lg-border-alpha: 0.18;
+  --lg-highlight-alpha: 0.20;
+  --lg-shadow-alpha: 0.38;
+}
+</style>
 
       <script>
 (() => {
